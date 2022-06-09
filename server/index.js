@@ -259,18 +259,26 @@ app.get('/product', (req, res) => {
 
 //overview backend;
 
-const model=require('./overview/model');
+// const model=require('./overview/model');
 
 //test on overview
 
 
-app.get('/overview', (req, res)=>{
-  model.getProduct( (err, data) => {
-    if (err) {
-      res.send(err);
-    }else{
-      console.log('testttt');
-      res.status(201).send(data.rows);
-    }
-  })
-});
+// app.get('/overview', (req, res)=>{
+//   model.getProduct( (err, data) => {
+//     if (err) {
+//       res.send(err);
+//     }else{
+//       console.log('testttt');
+//       res.status(201).send(data.rows);
+//     }
+//   })
+// });
+
+
+
+/* #################### REVIEWS #################### */
+
+const controllers = require('./controller');
+
+app.get('/test', controllers.reviews.test);
