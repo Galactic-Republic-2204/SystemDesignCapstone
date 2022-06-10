@@ -7,7 +7,7 @@
 
 -- DROP TABLE IF EXISTS tempreviews;
 -- CREATE TABLE tempreviews (
---   id INT,
+--   id INT PRIMARY KEY,
 --   product_id INT,
 --   rating INT,
 --   date TEXT,
@@ -94,14 +94,14 @@
 
 -- # Create characteristics_reviews table for now
 
-DROP TABLE IF EXISTS characteristics_reviews;
-CREATE TABLE characteristics_reviews (
-  id INT PRIMARY KEY,
-  characteristics_id INT NOT NULL,
-  review_id INT NOT NULL,
-  value INT,
-  FOREIGN KEY (characteristics_id) REFERENCES characteristics (id),
-  FOREIGN KEY (review_id) REFERENCES reviews (id)
-);
+-- DROP TABLE IF EXISTS characteristics_reviews;
+-- CREATE TABLE characteristics_reviews (
+--   id INT PRIMARY KEY,
+--   characteristics_id INT NOT NULL,
+--   review_id INT NOT NULL,
+--   value INT,
+--   FOREIGN KEY (characteristics_id) REFERENCES characteristics (id),
+--   FOREIGN KEY (review_id) REFERENCES reviews (id)
+-- );
 
-COPY characteristics_reviews FROM '/Users/xiaohan/Desktop/HR/SystemDesignCapstone/originaldata/characteristic_reviews.csv' DELIMITER ',' CSV HEADER;
+-- COPY characteristics_reviews FROM '/Users/xiaohan/Desktop/HR/SystemDesignCapstone/originaldata/characteristic_reviews.csv' DELIMITER ',' CSV HEADER;

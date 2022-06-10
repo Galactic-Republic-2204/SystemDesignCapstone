@@ -32,12 +32,12 @@ app.get('/products', (req, res) => {
 //get reviews for specific product id
 //from client end: axios.get('/reviews/?id=40344')
 // `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/?product_id=${id}&&count=100`
-app.get('/reviews/:id', (req, res) => {
-  var id = req.params.id;
-  axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/?product_id=${id}&&count=300`, { headers: {'Authorization': process.env.token}})
-  .then((data)=> {res.status(200).send(data.data)})
-  .catch((err) => {res.status(500).send(err);});
-});
+// app.get('/reviews/:id', (req, res) => {
+//   var id = req.params.id;
+//   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/reviews/?product_id=${id}&&count=300`, { headers: {'Authorization': process.env.token}})
+//   .then((data)=> {res.status(200).send(data.data)})
+//   .catch((err) => {res.status(500).send(err);});
+// });
 
 app.get('/reviews/meta/:id', (req, res) => {
   var id = req.params.id;
@@ -282,3 +282,5 @@ app.get('/product', (req, res) => {
 const controllers = require('./controller');
 
 app.get('/test', controllers.reviews.test);
+
+app.get('/reviews/:id', controllers.reviews.getReviews);
