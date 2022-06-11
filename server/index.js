@@ -283,4 +283,6 @@ const controllers = require('./controller');
 
 app.get('/test', controllers.reviews.test);
 
-app.get('/reviews/:id', controllers.reviews.getReviews);
+app.get('/reviews', controllers.reviews.getReviews);
+
+app.get('/reviews/meta', controllers.reviews.getReviewMetadata);

@@ -20,6 +20,7 @@
 --   response VARCHAR(255),
 --   helpfulness INT
 -- );
+-- CREATE INDEX review_productid_index ON tempreviews (product_id);
 
 -- COPY tempreviews FROM '/Users/xiaohan/Desktop/HR/SystemDesignCapstone/originaldata/reviews.csv' DELIMITER ',' CSV HEADER;
 
@@ -66,7 +67,6 @@
 --   FOREIGN KEY (review_id) REFERENCES reviews (id);
 
 
-
 -- # Create reviewphotos table
 
 -- DROP TABLE IF EXISTS reviewphotos;
@@ -76,6 +76,7 @@
 --   url VARCHAR(255) NOT NULL,
 --   FOREIGN KEY (review_id) REFERENCES reviews (id)
 -- );
+-- CREATE INDEX review_id_index ON reviewphotos (review_id);
 
 -- COPY reviewphotos FROM '/Users/xiaohan/Desktop/HR/SystemDesignCapstone/originaldata/reviews_photos.csv' DELIMITER ',' CSV HEADER;
 
